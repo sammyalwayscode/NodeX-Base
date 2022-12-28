@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const bookControler_1 = require("../controller/bookControler");
+const multer_1 = require("../config/multer");
+const router = (0, express_1.Router)();
+router.route("/newBook").post(multer_1.coverUpload, bookControler_1.postBook);
+router.route("/getall").get(bookControler_1.getAllbooks);
+router.route("/getone/:id").get(bookControler_1.getOneBook);
+router.route("/search").get(bookControler_1.searchBooks);
+router.route("/views/:id").patch(bookControler_1.myViews);
+exports.default = router;

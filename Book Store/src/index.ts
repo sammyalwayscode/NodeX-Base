@@ -1,9 +1,11 @@
 import express, { Application, Request, Response } from "express";
-import router from "./router/bookRouter";
-const PORT: number = 2442;
+import router from "../router/bookRouter";
+import cors from "cors";
+const PORT: number | string = process.env.PORT || 2442;
 const app: Application = express();
-require("./config/db");
+require("../config/db");
 app.use(express.json());
+app.use(cors({ origin: "*" }));
 
 app.get("/", (req: Request, res: Response): Response => {
   return res.status(200).json({
