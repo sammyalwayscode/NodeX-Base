@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const URI: string = "mongodb://localhost/booksDB";
-// const lifeURI: string =
-//   "mongodb+srv://W8PypVqIRJXDReMh:W8PypVqIRJXDReMh@cluster0.1nq2x.mongodb.net/?retryWrites=true&w=majority";
+const lifeURI: string =
+  "mongodb+srv://Sammy:sammysam@cluster0.aqlrqqw.mongodb.net/bookStore?retryWrites=true&w=majority";
 
-mongoose.connect(URI);
+mongoose.connect(lifeURI);
 mongoose.connection
   .on("open", () => {
     console.log("DataBase Connected");
